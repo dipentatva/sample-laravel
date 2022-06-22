@@ -60,4 +60,9 @@ class LoginController extends Controller
     {
         return redirect()->intended();
     }
+
+    protected function new_method() 
+    {
+        echo "Test";
+    }
 }
