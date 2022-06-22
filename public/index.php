@@ -33,7 +33,7 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 */
 
 require __DIR__.'/../vendor/autoload.php';
-
+echo "A1";
 /*
 |--------------------------------------------------------------------------
 | Run The Application
@@ -46,11 +46,11 @@ require __DIR__.'/../vendor/autoload.php';
 */
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
-
+echo "A2";
 $kernel = $app->make(Kernel::class);
 
 $response = $kernel->handle(
     $request = Request::capture()
 )->send();
-
+echo "A3";exit;
 $kernel->terminate($request, $response);
